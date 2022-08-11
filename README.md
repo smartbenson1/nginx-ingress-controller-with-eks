@@ -3,7 +3,9 @@ This repo walks you through how to enable cookie-based sticky session with Nginx
 
 
 ## 1. Create an EKS cluster in a specific region
+```
 eksctl create cluster --region ap-east-1
+```
 
 ## 2. Deploy Nginx Ingress Controller 
 kubectl apply -f ./nginx-ingress-controller.yaml
