@@ -1,5 +1,5 @@
 # nginx-ingress-controller-with-eks
-This repo walks you through how to enable cookie-based sticky session with Nginx Ingress Controller on Amazon EKS.
+Customers who's using Nginx Ingress Controller ask if features like cookie-based sticky session is supported on Amazon EKS. This repo walks you through how to enable cookie-based sticky session with Nginx Ingress Controller on Amazon EKS.
 
 
 ## 1. Create an EKS cluster in a specific region
