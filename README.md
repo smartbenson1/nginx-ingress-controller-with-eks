@@ -17,6 +17,22 @@ kubectl apply -f ./nginx-ingress-controller.yaml
 kubectl apply -f ./deployment.yaml && kubectl apply -f ./svc.yaml
 ```
 
+## 4. Deploy the ingress resource
+
+```
+kubectl apply -f ./ingress-session-affinity.yaml
+```
+
+Inspect the cookie-related settings in the following annotations:
+
+```
+nginx.ingress.kubernetes.io/affinity: "cookie"
+nginx.ingress.kubernetes.io/affinity-mode: "persistent"
+nginx.ingress.kubernetes.io/session-cookie-name: "stickounet"
+nginx.ingress.kubernetes.io/session-cookie-expires: "172800"
+nginx.ingress.kubernetes.io/session-cookie-max-age: "172800"
+```
+
 ## 4. Verify that the sticky session is working
 ```
 for i in {0..5}; do curl --cookie cookie.txt --cookie-jar cookie.txt http://ababd4e58fc4b4cde933c52ebd007efc-e3ff84bdc1aef180.elb.ap-east-1.amazonaws.com/; echo ""; done
