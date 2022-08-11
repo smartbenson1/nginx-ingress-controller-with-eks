@@ -39,9 +39,11 @@ for i in {0..5}; do curl --cookie cookie.txt --cookie-jar cookie.txt http://abab
 ```
 
 The output of the above command should return something like this(showing that each curl request with the same cookie value is served by the same pod): 
+```
 Hello "what-is-my-pod-deployment-666d84dbf5-zmhcr"!
 Hello "what-is-my-pod-deployment-666d84dbf5-zmhcr"!
 Hello "what-is-my-pod-deployment-666d84dbf5-zmhcr"!
 Hello "what-is-my-pod-deployment-666d84dbf5-zmhcr"!
 Hello "what-is-my-pod-deployment-666d84dbf5-zmhcr"!
 Hello "what-is-my-pod-deployment-666d84dbf5-zmhcr"!
+```
