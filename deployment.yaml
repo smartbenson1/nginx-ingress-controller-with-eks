@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: what-is-my-pod-deployment
+  labels:
+    app: what-is-my-pod
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: what-is-my-pod
+  template:
+    metadata:
+      labels:
+        app: what-is-my-pod
+    spec:
+      containers:
+      - name: what-is-my-pod
+        image: ovhplatform/what-is-my-pod:1.0.1
+        ports:
+        - containerPort: 8080
+        env:
+          - name: MY_POD_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.name
